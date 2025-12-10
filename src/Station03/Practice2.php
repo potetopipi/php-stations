@@ -6,7 +6,15 @@ class Practice2
 {
     public function main(): void
     {
-        // ここにサンプルコードを記述
+        $a = '1';
+        switch (true) {
+            case $a === '1':
+                echo '$a は string の 1 です' . PHP_EOL;
+                break;
+            case $a === 1:
+                echo '$a は int の 1 です' . PHP_EOL;
+            break;
+        }
     }
 }
 

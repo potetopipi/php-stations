@@ -6,5 +6,16 @@ class Question
 {
     public function main(mixed $arg): string
     {
+        switch ($arg) {
+            case $arg === 1:
+                return 'りんご';
+            case $arg === 2:
+            case $arg === 3:
+                return 'みかん';
+            default:
+                return 'さくらんぼ';
+        }
     }
 }
+$q = new Question();
+echo $q->main('1') . PHP_EOL;
