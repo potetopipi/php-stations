@@ -15,6 +15,7 @@
 - **Namespace Convention**: `Src\StationNN` for source code, `Tests\StationNN` for tests
 
 ### Key Files
+
 - `composer.json`: PSR-4 autoloading configured for `Src\` and `Tests\` namespaces
 - `phpunit.xml`: Bootstrap configuration pointing to `vendor/autoload.php`
 - `docker-compose.yml`: Two services - `php-container` and `composer_installation`
@@ -23,13 +24,14 @@
 ## Development Workflow
 
 ### Setup & Execution
+
 1. **Environment**: Docker required. Start with `docker compose up -d`
 2. **Running Code**: Execute files inside container:
    ```bash
    docker compose exec php-container php src/StationNN/Question.php
    docker compose exec php-container php src/StationNN/Practice.php
    ```
-3. **Running Tests**: 
+3. **Running Tests**:
    ```bash
    docker compose exec php-container ./vendor/bin/phpunit
    docker compose exec php-container ./vendor/bin/phpunit --group station01
@@ -38,6 +40,7 @@
 ### Code Patterns
 
 #### Question Classes
+
 - **Signature**: Methods with full type hints and return types (PHP 8.1+ style)
 - **Typical Pattern**: Single `main()` method with various signatures
   - `public function main(): array` - Returns data for assertions
@@ -46,6 +49,7 @@
 - **Namespace**: Always `Src\StationNN`
 
 #### Test Structure
+
 - **File**: `tests/StationNN/QuestionTest.php`
 - **Setup**: Instantiate Question class in `setUp()` method
 - **Test Annotations**:
@@ -55,6 +59,7 @@
 - **Assertions**: Primarily `assertSame()` for type-strict comparison
 
 #### Multi-File Stations (Station12+)
+
 - Some stations use directory structure instead of single files
 - `Station12/Question/Question.php` + supporting classes (`Product.php`, `Food.php`)
 - Tests reference `Src\Station12\Question\Question` namespace
@@ -63,18 +68,21 @@
 ## Critical Implementation Details
 
 ### Type System (PHP 8.1+)
+
 - Strict type hints required: `int`, `string`, `float`, `bool`, `array`, `mixed`
 - Return type declarations mandatory
 - Use `gettype()` for type checking in early stations
 - Type juggling behavior varies by context (e.g., `'1'` vs `1`)
 
 ### Common Patterns to Watch
+
 1. **Type Coercion Tests**: Many exercises test PHP's type juggling behavior
 2. **Array Operations**: Frequent use of array functions and iteration
 3. **String Manipulation**: Type conversion between strings and numbers
 4. **Object-Oriented Design**: Later stations introduce classes and inheritance
 
 ### Dependencies
+
 - **Carbon**: Date/time library (nesbot/carbon ^2.64)
 - **PHP Parser**: AST parsing (nikic/php-parser ^4.15)
 - **PHPUnit**: Testing framework (^9)
