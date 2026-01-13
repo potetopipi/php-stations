@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/app/tests/Station07" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="2.207054">
+    <testsuite name="Tests\Station07\QuestionTest" file="/app/tests/Station07/QuestionTest.php" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="2.207054">
+      <testcase name="one_期待値と一致するよう結合された連想配列を返す" class="Tests\Station07\QuestionTest" classname="Tests.Station07.QuestionTest" file="/app/tests/Station07/QuestionTest.php" line="23" assertions="1" time="2.206877">
+        <system-out>Array
+(
+    [北海道] =&gt; 1
+    [東京都] =&gt; 13
+    [大阪府] =&gt; 27
+    [京都府] =&gt; 26
+    [広島県] =&gt; 34
+)
+Array
+(
+    [0] =&gt; 山田太郎
+    [1] =&gt; 鈴木次郎
+    [2] =&gt; 佐藤花子
+)
+Array
+(
+    [apple] =&gt; 140
+    [banana] =&gt; 200
+    [orange] =&gt; 120
+)
+</system-out>
+      </testcase>
+      <testcase name="two_結合した姓名を要素に持つ配列を返す" class="Tests\Station07\QuestionTest" classname="Tests.Station07.QuestionTest" file="/app/tests/Station07/QuestionTest.php" line="40" assertions="1" time="0.000125"/>
+      <testcase name="three_期待値と一致するよう抽出された連想配列を返す" class="Tests\Station07\QuestionTest" classname="Tests.Station07.QuestionTest" file="/app/tests/Station07/QuestionTest.php" line="51" assertions="1" time="0.000052"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
